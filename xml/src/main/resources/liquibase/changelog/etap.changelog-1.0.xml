@@ -6,8 +6,9 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="1" author="kye">
-        <comment>So comments go here to say what the change is. In this case we are creating the first table.</comment>
+
+    <changeSet id="create journey table" author="kye">
+        <comment>create journey table</comment>
         <createTable tableName="journey">
             <column name="id" type="int">
                 <constraints primaryKey="true" nullable="false"/>
@@ -17,5 +18,37 @@
             </column>
         </createTable>
     </changeSet>
+
+
+    <changeSet id="create passenger table" author="kye">
+        <comment>create passenger table</comment>
+        <createTable tableName="passenger">
+            <column name="id" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="passengerId" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstname" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="passportId" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phonenumber" type="varchar(30)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="journeyId" type="int">
+                <constraints nullable="false" foreignKeyName="fk_passenger_journey" references="journey(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
 
 </databaseChangeLog>

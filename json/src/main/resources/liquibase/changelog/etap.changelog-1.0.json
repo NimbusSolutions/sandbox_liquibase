@@ -2,13 +2,13 @@
   "databaseChangeLog": [
     {
       "changeSet": {
-        "id": "1",
+        "id": "create journey table",
         "author": "kye",
         "comment": "using JSON to configure the change logs",
         "changes": [
           {
             "createTable": {
-              "tableName": "person",
+              "tableName": "journey",
               "columns": [
                 {
                   "column": {
@@ -27,6 +27,89 @@
                     "type": "varchar(20)",
                     "constraints": {
                       "nullable": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "changeSet": {
+        "id": "create passenger table",
+        "author": "kye",
+        "comment": "using JSON to configure the change logs",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "passenger",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "int",
+                    "autoIncrement": true,
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "passengerId",
+                    "type": "varchar(20)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "firstname",
+                    "type": "varchar(20)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "lastname",
+                    "type": "varchar(20)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "email",
+                    "type": "varchar(20)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "passportId",
+                    "type": "varchar(20)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "journeyId",
+                    "type": "int",
+                    "constraints": {
+                      "nullable": false,
+                      "foreignKeyName": "fk_passenger_journey",
+                      "references": "journey(id)"
                     }
                   }
                 }
