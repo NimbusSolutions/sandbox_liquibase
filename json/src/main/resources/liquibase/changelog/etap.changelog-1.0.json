@@ -1,0 +1,40 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "1",
+        "author": "kye",
+        "comment": "using JSON to configure the change logs",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "person",
+              "columns": [
+                {
+                  "column": {
+                    "name": "id",
+                    "type": "int",
+                    "autoIncrement": true,
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+                  }
+                },
+                {
+                  "column": {
+                    "name": "pnr",
+                    "type": "varchar(20)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

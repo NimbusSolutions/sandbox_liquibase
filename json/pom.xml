@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.eurostar.sandbox</groupId>
-    <artifactId>liquibase-xml</artifactId>
+    <artifactId>liquibase-json</artifactId>
     <version>1.0-SNAPSHOT</version>
-
 
     <properties>
         <mysql.version>5.1.35</mysql.version>
         <liquibase.version>3.3.2</liquibase.version>
+        <yaml.version>1.15</yaml.version>
     </properties>
 
 
@@ -33,6 +33,13 @@
     <build>
         <plugins>
             <plugin>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.yaml</groupId>
+                        <artifactId>snakeyaml</artifactId>
+                        <version>${yaml.version}</version>
+                    </dependency>
+                </dependencies>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>${liquibase.version}</version>
@@ -50,5 +57,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
