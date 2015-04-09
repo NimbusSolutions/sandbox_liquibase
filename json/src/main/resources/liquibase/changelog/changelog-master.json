@@ -1,0 +1,9 @@
+{
+  "databaseChangeLog": [
+    {
+      "include": {
+        "file": "src/main/resources/liquibase/changelog/changelog-1.0.json"
+      }
+    }
+  ]
+}

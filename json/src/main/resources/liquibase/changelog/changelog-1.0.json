@@ -59,7 +59,7 @@
                 },
                 {
                   "column": {
-                    "name": "passengerId",
+                    "name": "passenger_id",
                     "type": "varchar(20)",
                     "constraints": {
                       "nullable": false
@@ -95,7 +95,7 @@
                 },
                 {
                   "column": {
-                    "name": "passportId",
+                    "name": "passport_id",
                     "type": "varchar(20)",
                     "constraints": {
                       "nullable": false
@@ -104,7 +104,7 @@
                 },
                 {
                   "column": {
-                    "name": "journeyId",
+                    "name": "journey_id",
                     "type": "int",
                     "constraints": {
                       "nullable": false,
